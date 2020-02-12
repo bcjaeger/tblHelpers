@@ -1,16 +1,30 @@
 Package: tblHelpers
-Title: What the Package Does (One Line, Title Case)
+Title: Tabulation Helper Functions
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Byron",
+           family = "Jaeger",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "bcjaeger@uab.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: fabulate provides a set of functions to help accelerate
+  workflows that tabulate data. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    testthat (>= 2.1.0)
 Roxygen: list(markdown = TRUE)
-URL: https://github.com/bcjaeger/tblHelpers
-BugReports: https://github.com/bcjaeger/tblHelpers/issues
+RoxygenNote: 7.0.2
+Imports: 
+    glue,
+    flextable,
+    tibble,
+    purrr,
+    rlang,
+    tidyr,
+    magrittr,
+    dplyr,
+    stats,
+    stringr,
+    tblStrings
