@@ -35,12 +35,11 @@
 #'     `Sepal width`  = smry_meanSD(Sepal.Width),
 #'     `Sepal width`  = smry_medianIQR(Sepal.Width)
 #'   ) %>%
-#'   group_by(variable) %>%
-#'   as_grouped_ft() %>%
+#'   ft_grouped_by(variable) %>%
 #'   theme_vanilla() %>%
 #'   align_lc() %>%
 #'   autofit() %>%
-#'   pad_groups()
+#'   pad_groups(grp_color = 'white')
 
 
 dabulate <- function(data, ..., names_sep = '_', include_overall = TRUE) {

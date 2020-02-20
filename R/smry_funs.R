@@ -95,8 +95,11 @@ smry_medianIQR <- function(x, name = "Median [IQR]",
 smry_countP <- function(x, use_na = TRUE,
   include_first_cat = TRUE, na_level = 'Missing'){
 
-  stopifnot(is.numeric(x), is.logical(use_na),
-    is.logical(include_first_cat), is.character(na_level))
+  stopifnot(
+    is.logical(use_na),
+    is.logical(include_first_cat),
+    is.character(na_level)
+  )
 
   useNA <- ifelse(use_na, 'always', 'no')
 
@@ -162,7 +165,7 @@ smry_irateCI <- function(time, status, name = "Incidence rate (95% CI)",
     unit * exp(stats::confint(fit, level = level))
   )
 
-  tblStrings::pintr(est_point, est_interval[1], est_interval[2]) %>%
+  tblStrings::pointGap(est_point, est_interval[1], est_interval[2]) %>%
     as.character() %>%
     purrr::set_names(name)
 

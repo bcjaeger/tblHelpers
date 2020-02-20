@@ -6,8 +6,11 @@ if(getRversion() >= "2.15.1")
     c(
       ".",
       ".x",
+      "type",
       "level",
+      "label",
       "value",
+      "variable",
       "col_keys"
     )
   )

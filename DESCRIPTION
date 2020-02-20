@@ -27,4 +27,6 @@ Imports:
     dplyr,
     stats,
     stringr,
-    tblStrings
+    tblStrings,
+    vctrs,
+    MASS

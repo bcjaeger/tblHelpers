@@ -27,13 +27,13 @@ test_that(
       c(`20` = "2 (50.0%)", Missing = "0 (0.00%)")
     )
 
-    time <- rep(1, 50)
-    status <- c(rep(1, 25), rep(0, 25))
-
     expect_equal(
       smry_countP(x, include_first_cat = FALSE),
       c(`20` = "2 (50.0%)", Missing = "0 (0.00%)")
     )
+
+    time <- rep(1, 50)
+    status <- c(rep(1, 25), rep(0, 25))
 
     expect_equal(
       smry_irateCI(time, status, unit = 1),

@@ -4,17 +4,23 @@
 \alias{header_split}
 \title{Flextable headers}
 \usage{
-header_split(object, pattern = "_", ...)
+header_split(object, ..., pattern = "_", front_to_back = TRUE)
 }
 \arguments{
 \item{object}{a \code{flextable} object}
 
-\item{pattern}{a string indicating the pattern that separates
-column header patterns in your \code{flextable}'s \code{col_keys},}
-
-\item{...}{named inputs of the form ||table header label|| =
-||column name chunk||. Examples given below should make this
+\item{...}{named inputs of the form \verb{<table header label>} =
+\verb{<column name chunk>}. Examples given below should make this
 a little more clear.}
+
+\item{pattern}{a string indicating the pattern that separates
+column header patterns in your \code{flextable}'s \code{col_keys}.}
+
+\item{front_to_back}{a logical value. If \code{TRUE}, then the table headers
+are constructed from front to back, meaning variable names \code{a_b} and
+\code{a_c} will be turned into a header value \code{a} comprising lower rows
+\code{b} and \code{c}. If \code{FALSE}, then the names \code{b_a} and \code{c_a} would be needed
+to make the same structure.}
 }
 \value{
 a \code{flextable} object
@@ -40,12 +46,12 @@ the table.
 }
 \examples{
 
-df <- data.frame(a_c = c("easy", "make"), b_c = c("to", "now!"))
+df <- data.frame(a_c = c("made", "column"), b_c = c("with", "names"))
 ft <- flextable::flextable(df)
-ft <- header_split(ft, pattern = '_', c = 'Headers', a = 'are', b = 'so')
+ft <- header_split(ft, pattern = '_',
+  c = 'Headers', a = 'are', b = 'all')
 ft <- flextable::theme_box(ft)
 ft <- flextable::align(ft, align = 'center', part = 'all')
 ft
-
 
 }

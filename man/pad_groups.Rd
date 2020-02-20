@@ -7,14 +7,14 @@
 pad_groups(
   object,
   grp_color = "grey80",
-  pad_width = 5,
+  pad_width = 10,
   bold = FALSE,
   italic = TRUE
 )
 }
 \arguments{
 \item{object}{a \code{flextable} object with group names. To create this
-type of object, use \link{as_grouped_ft}.}
+type of object, use \link{ft_grouped_by}.}
 
 \item{grp_color}{a character value (or vector of length equal to the
 number of groups in \code{data}) indicating the background color that
@@ -47,7 +47,7 @@ library(dplyr)
 iris \%>\%
   group_by(Species) \%>\%
   slice(1:3) \%>\%
-  as_grouped_ft() \%>\%
+  ft_grouped_by() \%>\%
   theme_vanilla() \%>\%
   align_lc() \%>\%
   pad_groups()

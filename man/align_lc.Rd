@@ -26,7 +26,7 @@ library(dplyr)
 iris \%>\%
   group_by(Species) \%>\%
   slice(1:3) \%>\%
-  as_grouped_ft() \%>\%
+  ft_grouped_by() \%>\%
   theme_vanilla() \%>\%
   align_lc() \%>\%
   pad_groups()
